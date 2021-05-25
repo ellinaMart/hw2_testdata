@@ -38,13 +38,11 @@ def add_book_to_user(user_data, books):
         else:
             user_data[i]['books'] = books[i]
 
-    print(user_data)
-
     with open('data/example.json', 'w') as outfile:
         s = dumps(user_data, indent=4)
         outfile.write(s)
 
-def main():
+if __name__ == "__main__":
     user_data = get_users()
     books = get_books()
     add_book_to_user(user_data, books)
